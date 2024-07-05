@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Tab Renamer",
+  "version": "1.0",
+  "description": "Rename your browser tabs easily",
+  "permissions": ["activeTab", "storage", "tabs"],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "400": "icon.png"
+  }
+}
